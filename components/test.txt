@@ -1,0 +1,30 @@
+
+// const Logo = new MeshPhongMaterial({ color: 0x000000, shininess: 5 });
+// const Cylinder = new MeshPhongMaterial({ color: 0xffffff, shininess: 5 });
+// const Body = new MeshPhongMaterial({ color: 0x000000, shininess: 5 });
+
+// const INITIAL_MAP = [
+//   { childID: "audiön", mtl: Logo },
+//   { childID: "teker.001", mtl: Cylinder },
+// ];
+
+//
+//
+//
+
+// const initColor = (parent, type, mtl) => {
+//   parent.traverse(o => {
+//     if (o.isMesh) {
+//       if (o.name.includes(type)) {
+//         o.material = mtl;
+//         o.nameID = type;
+//       }
+//     }
+//   });
+// }
+
+// if (fbx) {
+//   for (let object of INITIAL_MAP) {
+//     initColor(fbx, object.childID, object.mtl);
+//   }
+// }
