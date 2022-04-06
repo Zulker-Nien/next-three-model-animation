@@ -14,19 +14,12 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>Hello World</h1>
          <div className={styles.grid}>
           <div className={styles.card}>
             {/* Left Card Code Goes Here */}
             {/* <p>Left Card.</p> */}
-            <Left/>
-
-          </div>
-          <div className={styles.card}>
-            {/* Left Card Code Goes Here */}
-            {/* <p>Right Card.</p> */}
-            {/* {console.log("Help")} */}
             <Right/>
+
           </div>
         </div>
       </main>

@@ -1,28 +1,49 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import styles from "../styles/Component.module.css";
 import Floor from "./floor";
 import { OrbitControls } from "@react-three/drei";
 
 const left = () => {
+  const [upDown, setUpDown] = useState<number>(0);
+  const [rightLeft, setRightLeft] = useState<number>(0);
+  const [zaxis, setZAxis] = useState<number>(0);
+
   // CHANGE COLOUR ON SPACEBAR CLICK
   // This is the state
   const [state, setState] = useState("white");
 
-  // Check Keyboard Press on Spacebar
+  // Check Keyboard Press on Spacebar and Movements on (x,y,z) directions
   const handleUserKeyPress = useCallback(
     (event) => {
       const { keyCode } = event;
       if (keyCode === 32) {
         var randomNumber = Math.floor(Math.random() * colors.length);
         setState(colors[randomNumber]);
-      } if(keyCode === 40){
-        
+      }
+      if (keyCode === 40) {
+        setUpDown(upDown - 1);
+      }
+      if (keyCode === 37) {
+        setRightLeft(rightLeft - 1);
+      }
+      if (keyCode === 39) {
+        setRightLeft(rightLeft + 1);
+      }
+      if (keyCode === 38) {
+        setUpDown(upDown + 1);
+      }
+      if (keyCode === 188) {
+        setZAxis(zaxis + 1);
+      }
+      if (keyCode === 190) {
+        setZAxis(zaxis - 1);
       }
     },
-    [state]
+    [state, upDown, rightLeft, zaxis]
   );
 
+  //Trigger on change
   useEffect(() => {
     window.addEventListener("keydown", handleUserKeyPress);
     return () => {
@@ -30,6 +51,7 @@ const left = () => {
     };
   }, [handleUserKeyPress]);
 
+  // Available colours
   const colors = [
     "#7f8a93",
     "#97a1a7",
@@ -69,37 +91,26 @@ const left = () => {
     "#281A1C",
     "#4F556F",
   ];
-  const keys = {
-    LEFT: 'ArrowLeft', //left arrow
-    UP: 'ArrowUp', // up arrow
-    RIGHT: 'ArrowRight', // right arrow
-    BOTTOM: 'ArrowDown' // down arrow
-  }
 
   return (
     <div className={styles.scene}>
       <Canvas
-        // shadows={true}
-        // className={styles.canvas}
         camera={{
           position: [-6, 7, 7],
         }}
       >
         <ambientLight intensity={0.1} />
         <directionalLight color={"white"} position={[2, 2, 5]} />
-        {/* <TransformControls mode="translate"> */}
-        <mesh>
+        <mesh position={[rightLeft, upDown, zaxis]}>
           <boxGeometry args={[5, 4, 5]} />
           <meshStandardMaterial color={state} />
           <OrbitControls
-          enablePan={true}
-          enableZoom={true}
-          enableRotate={true}
-          // makeDefault
-        />
+            enablePan={false}
+            enableZoom={true}
+            enableRotate={true}
+          />
         </mesh>
-        {/* </TransformControls> */}
-       
+
         <Floor />
       </Canvas>
     </div>
