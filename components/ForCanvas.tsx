@@ -2,9 +2,9 @@ import { Preload, useFBX } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import styles from "../styles/Component.module.css";
-import Model from "./Model"
+import Model from "./ModelLoad"
 
-export default function Right() {
+export default function ForCanvas() {
   return (
     <>
     <div className={styles.scene}>

@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 // import Left from "../components/Left";
-import Right from "../components/Right";
+import Right from "../components/ForCanvas";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
