@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Left from "../components/Left";
+// import Left from "../components/Left";
 import Right from "../components/Right";
 import styles from "../styles/Home.module.css";
 
@@ -16,10 +16,7 @@ const Home: NextPage = () => {
       <main className={styles.main}>
          <div className={styles.grid}>
           <div className={styles.card}>
-            {/* Left Card Code Goes Here */}
-            {/* <p>Left Card.</p> */}
             <Right/>
-
           </div>
         </div>
       </main>
