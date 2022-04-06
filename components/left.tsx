@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState, useRef } from "react";
 import { Canvas } from "@react-three/fiber";
 import styles from "../styles/Component.module.css";
-import Floor from "./floor";
+import Floor from "./Floor";
 import { OrbitControls } from "@react-three/drei";
 
 const left = () => {

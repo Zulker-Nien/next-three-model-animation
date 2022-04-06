@@ -10,7 +10,7 @@ import { FBXLoader } from "three/examples/jsm/loaders/FBXLoader";
 import {  LoopOnce, MeshPhongMaterial } from "three/src/Three";
 import THREE from "three";
 
-const model = () => {
+const Model = () => {
   // Load Model
   const fbx = useLoader(FBXLoader, "./ASSASSIN_07.fbx");
   // Load Textures
@@ -113,4 +113,4 @@ const model = () => {
   );
 };
 
-export default model;
+export default Model;
