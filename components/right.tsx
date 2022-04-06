@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import styles from "../styles/Component.module.css";
 import Model from "./Model"
 
-export default function right() {
+export default function Right() {
   return (
     <>
     <div className={styles.scene}>
