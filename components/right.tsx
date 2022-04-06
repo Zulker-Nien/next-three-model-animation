@@ -2,7 +2,7 @@ import { Preload, useFBX } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
 import styles from "../styles/Component.module.css";
-import Model from "./Model";
+import Model from "./Model"
 
 export default function right() {
   return (
