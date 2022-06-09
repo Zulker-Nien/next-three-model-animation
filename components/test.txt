@@ -8,9 +8,6 @@
    { childID: "NAME_OF_THE_LAYER_YOU_WANT_TO_CHANGE", mtl: Cylinder },
  ];
 
-
-
-
  const initColor = (parent, type, mtl) => {
    parent.traverse(o => {
      if (o.isMesh) {

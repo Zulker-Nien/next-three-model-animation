@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 // import Left from "../components/Left";
-import Right from "../components/ForCanvas";
+import ForCanvas from "../components/ForCanvas";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
@@ -14,11 +14,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-         <div className={styles.grid}>
-          <div className={styles.card}>
-            <Right/>
-          </div>
-        </div>
+            <ForCanvas/>
       </main>
     </div>
   );
